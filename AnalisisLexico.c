@@ -2,7 +2,7 @@
 #include<string.h>
 #include "ctype.h"
 
-char frase[80]={"+++54<>>=<=aDwer=34==90=!=!---%"};
+char frase[80]={"+++54<>>=<=aDwer=39=!=!---%-"};
 int n; //elementos en la l�nea
 int ind=0; //indice del arreglo
 int edo=0; //estado del aut�mata
@@ -38,23 +38,24 @@ int main(void){
                     printf("%c\t",frase[ind]);
                     printf("ID\n");
                 }
-                // else if (isalpha(frase[ind]) && isalpha(frase[ind+1]))
-                // {
-                //     printf("%s\t",frase[ind]+frase[ind+1]);
-                // }
+                else if (isalpha(frase[ind]) && isalpha(frase[ind+1]))
+                {
+                    printf("%c\t",frase[ind]+frase[ind+1]);
+                }
                 else if (isdigit(frase[ind]))
                 {
-                    printf("%d\t",frase[ind]);
+                    printf("%c\t",frase[ind]);
                     printf("NUM\n");
                 } 
                 
+                
                 else
                 {
-                     printf("Error %c\n",frase[ind]); break;
+                     printf("Error %s\n",frase[ind]); break;
                 }
                 
                 
-            }
+             }
             ind++; break;
         case 1:
             if(frase[ind]=='='){
