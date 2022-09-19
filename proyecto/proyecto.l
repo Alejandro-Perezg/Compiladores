@@ -19,11 +19,11 @@ nombre_funciones[A-N]|[P-X]|[Z]|[A-Z][a-zA-Z]+
 %%
 
 
-{entero}+     printf("entero %d\n",yytext);
-{real}+   printf("real %d\n",yytext)
-{cadena}+ printf("cadena %s\n",yytext)
-{nombre_variables}+ printf("nombre_variables %s\n",yytext)
-{nombre_funciones}+ printf("nombre_funciones %s\n",yytext)
+{entero}+ printf("entero %d\n",yytext);
+{real}+   printf("real %d\n",yytext);
+{cadena}+ printf("cadena %s\n",yytext);
+{nombre_variables}+ printf("nombre_variables %s\n",yytext);
+{nombre_funciones}+ printf("nombre_funciones %s\n",yytext);
 
 
 
