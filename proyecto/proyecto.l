@@ -14,7 +14,7 @@ sino[sino]
 o-que-si[o-que-si]
 nombre_variables[a-z][a-zA-Z]+|[a-z]
 nombre_funciones[A-N]|[P-X]|[Z]|[A-Z][a-zA-Z]+
-
+OPLOG[o][y][no]
 
 %%
 
@@ -24,20 +24,20 @@ nombre_funciones[A-N]|[P-X]|[Z]|[A-Z][a-zA-Z]+
 {cadena}+ printf("cadena %s\n",yytext);
 {nombre_variables}+ printf("nombre_variables %s\n",yytext);
 {nombre_funciones}+ printf("nombre_funciones %s\n",yytext);
+{OPLOG}+ printf("OPLOG %s\n",yytext);
+{si}+ printf("condicional %s\n",yytext);
+{sino}+ printf("condicional %s\n",yytext);
+{o-que-si}+ printf("condicional %s\n",yytext);
 
 
 
-"<" printf("OPREL",yytext);
-"<=" printf("OPREL",yytext);
-">" printf("OPREL",yytext);
-">=" printf("OPREL",yytext);
-"<>" printf("OPREL",yytext);
-"!=" printf("OPREL",yytext);
-"=" printf("OPREL",yytext);
-
-"o" printf("OPLOG",yytext);
-"y" printf("OPLOG",yytext);
-"no" printf("OPLOG",yytext);
+"<" printf("OPREL   <\n");
+"<=" printf("OPREL  <=\n");
+">" printf("OPREL   >\n");
+">=" printf("OPREL  >=\n");
+"<>" printf("OPREL  <>\n");
+"!=" printf("OPREL  !=\n");
+"=" printf("OPREL   =\n");
 
 "+" printf("OPARI",yytext);
 "-" printf("OPARI",yytext);
@@ -46,7 +46,7 @@ nombre_funciones[A-N]|[P-X]|[Z]|[A-Z][a-zA-Z]+
 "%" printf("OPARI",yytext);
 "**" printf("OPARI",yytext);
 
-"funcion" printf("funcion",yytext);
+funcion printf("funcion",yytext);
 
 %%
 
